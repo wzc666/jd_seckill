@@ -1,4 +1,5 @@
 import sys
+import datetime
 from jd_spider_requests import JdSeckill
 
 
@@ -19,7 +20,7 @@ if __name__ == '__main__':
  2.秒杀抢购商品
     """
     print(a)
-
+    
     jd_seckill = JdSeckill()
     choice_function = input('请选择:')
     if choice_function == '1':

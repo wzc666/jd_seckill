@@ -5,7 +5,8 @@ import functools
 import json
 import os
 import pickle
-
+import func_timeout
+from func_timeout import func_set_timeout
 from lxml import etree
 from jd_logger import logger
 from timer import Timer
@@ -317,12 +318,16 @@ class JdSeckill(object):
         """
         self._reserve()
 
+    @func_set_timeout(180)# time out 180s
     @check_login
     def seckill(self):
         """
         抢购
         """
-        self._seckill()
+        try:
+            self._seckill()
+        except func_timeout.exceptions.FunctionTimedOut:
+            print('func time out')
 
     @check_login
     def seckill_by_proc_pool(self, work_count=5):
