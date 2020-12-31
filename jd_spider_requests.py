@@ -6,7 +6,6 @@ import json
 import os
 import pickle
 
-from func_timeout import func_set_timeout
 from lxml import etree
 from jd_logger import logger
 from timer import Timer
