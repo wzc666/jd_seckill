@@ -5,7 +5,7 @@ import functools
 import json
 import os
 import pickle
-import func_timeout
+
 from func_timeout import func_set_timeout
 from lxml import etree
 from jd_logger import logger
