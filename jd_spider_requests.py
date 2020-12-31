@@ -318,19 +318,15 @@ class JdSeckill(object):
         """
         self._reserve()
 
-    @func_set_timeout(180)# time out 180s
     @check_login
     def seckill(self):
         """
         抢购
         """
-        try:
-            self._seckill()
-        except func_timeout.exceptions.FunctionTimedOut:
-            print('func time out')
+        self._seckill()
 
     @check_login
-    def seckill_by_proc_pool(self, work_count=5):
+    def seckill_by_proc_pool(self, work_count=7):
         """
         多进程进行抢购
         work_count：进程数量
